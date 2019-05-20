@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('web.pages.inicio');
+    $metas = \App\Entities\Meta::orderBy('total', 'asc')->get();
+    return view('web.pages.inicio')->with(compact('metas'));
 });
 
 Auth::routes();
