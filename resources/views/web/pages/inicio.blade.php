@@ -22,10 +22,10 @@
             </div>
             <div class="col-sm-12">
                 @foreach($metas as $meta)
-                <div class="card">
+                <div class="card mt-2">
                     <div class="card-body">
                         <span class="float-right">Cuotas {!! $meta->abono_cuotas !!}/{!! $meta->total_cuotas !!}</span>
-                        <h5 class="card-title">META 1. {!! $meta->nombre !!}</h5>
+                        <h5 class="card-title">META {!! $loop->iteration !!}. {!! $meta->nombre !!}</h5>
                         <p><strong>Deuda Total: </strong>S/ {!! number_format($meta->total/100, 2) !!} <strong>Deuda Pendiente: </strong>S/ {!! number_format($meta->montoFaltante()/100, 2) !!}</p>
                         <div class="progress">
                             <div class="progress-bar bg-danger" role="progressbar" style="width: {!! $meta->porcentaje() !!}%;" aria-valuenow="{!! $meta->porcentaje() !!}" aria-valuemin="0" aria-valuemax="100">{!! $meta->porcentaje() !!}%</div>
